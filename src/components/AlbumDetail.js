@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 
 import Card from './common/Card';
 import CardItem from './common/CardItem';
+import Button from './common/Button';
 
 class AlbumDetail extends Component {
     render() {
@@ -27,16 +28,13 @@ class AlbumDetail extends Component {
                 </CardItem>
 
                 <CardItem>
-                    <TouchableOpacity
+                    <Button
                         onPress={() => {
-                            // Apapun yang ditulis di sini
-                            // akan dijalankan ketika text dipencet
-
-                            Alert.alert('INFO', this.props.data.title, [{ text: 'okay', onPress: () => {} }, { text: 'batal' }, { text: 'netral' }]);
+                            Linking.openURL(this.props.data.url);
                         }}
                     >
-                        <Text style={{ fontSize: 36 }}>Klik Saya!</Text>
-                    </TouchableOpacity>
+                        BELI SAYA!
+                    </Button>
                 </CardItem>
             </Card>
         );

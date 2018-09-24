@@ -17,7 +17,7 @@ class Button extends Component {
 
 const styles = {
     buttonStyle: {
-        width: '100%',
+        flex: 1,
         alignSelf: 'stretch',
         backgroundColor: '#fff',
         borderRadius: 5,
@@ -36,4 +36,4 @@ const styles = {
     }
 };
 
-export { Button };
+export default Button;
