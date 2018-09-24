@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 
 import Card from './common/Card';
 import CardItem from './common/CardItem';
@@ -24,6 +24,19 @@ class AlbumDetail extends Component {
 
                 <CardItem>
                     <Image source={{ uri: this.props.data.image }} style={{ flex: 1, aspectRatio: 1 }} />
+                </CardItem>
+
+                <CardItem>
+                    <TouchableOpacity
+                        onPress={() => {
+                            // Apapun yang ditulis di sini
+                            // akan dijalankan ketika text dipencet
+
+                            Alert.alert('INFO', this.props.data.title, [{ text: 'okay', onPress: () => {} }, { text: 'batal' }, { text: 'netral' }]);
+                        }}
+                    >
+                        <Text style={{ fontSize: 36 }}>Klik Saya!</Text>
+                    </TouchableOpacity>
                 </CardItem>
             </Card>
         );
